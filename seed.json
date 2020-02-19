@@ -1,31 +1,5 @@
 [
 {
-    "model": "auth.user",
-    "pk": 1,
-    "fields": {
-        "password": "pbkdf2_sha256$180000$K6k4IU7GrH2R$A91vPwm77VvZxpRNxfI5jFx6lS9yEmPr54rawhYJzGQ=",
-        "last_login": "2020-02-15T15:25:41.272Z",
-        "is_superuser": true,
-        "username": "maheshwari",
-        "first_name": "",
-        "last_name": "",
-        "email": "",
-        "is_staff": true,
-        "is_active": true,
-        "date_joined": "2020-02-15T15:24:22.934Z",
-        "groups": [],
-        "user_permissions": []
-    }
-},
-{
-    "model": "sessions.session",
-    "pk": "h78izqdsh4muv9pi2gtl5de0tayqq5aa",
-    "fields": {
-        "session_data": "YmY1ODU5YjlmMDRlM2EzMGY4MmMyMmZhMjkwYmY5ODUxMjhhYTA3ODp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJkN2EzNDVjOGY4OTE2ZDJlYWNmMzU3MzZjNjZmZjE2NzE4YjE0ZmQ0In0=",
-        "expire_date": "2020-02-29T15:25:41.275Z"
-    }
-},
-{
     "model": "ProgramLibrary.program",
     "pk": 1,
     "fields": {
