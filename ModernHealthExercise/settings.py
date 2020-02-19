@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'modernhealth',
         'USER': 'maheshwari',
         'PASSWORD': 'password',
-        'HOST': '172.26.1.233',
+        'HOST': 'host address',
         'PORT': '',
     }
 }
