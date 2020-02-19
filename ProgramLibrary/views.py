@@ -9,6 +9,7 @@ from .models import Program
 from .serializers import ProgramSerializer
 from Section.models import Section
 from rest_framework.response import Response
+from rest_framework.exceptions import APIException
 
 
 class ProgramViewSet(mixins.CreateModelMixin,
@@ -26,10 +27,12 @@ class ProgramViewSet(mixins.CreateModelMixin,
 
 		#retrieve method will be called when a get request is made with the parameters passed
 		def retrieve(self, request, pk = None):
-			prog = Program.objects.filter(id = pk)[0]
-			serialize = ProgramSerializer(instance = prog)
-			return Response(serialize.data)
-			
+			try:
+				prog = Program.objects.filter(id = pk)[0]
+				serialize = ProgramSerializer(instance = prog)
+				return Response(serialize.data)
+			except:
+				raise APIException("No program found with id " + pk)
 			
 			
 			

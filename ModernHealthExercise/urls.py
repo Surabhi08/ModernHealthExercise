@@ -21,11 +21,11 @@ from Activity.views import ActivityViewSet
 from rest_framework.routers import DefaultRouter
 
 api_router = DefaultRouter()
-api_router.register(r'', ProgramViewSet, 'program')
 api_router.register(r'program', ProgramViewSet, 'program')
 urlpatterns = api_router.urls
 urlpatterns += [
     path('admin/', admin.site.urls),
+    path('/', ProgramViewSet.as_view({'get':'list'}), name = 'program'),
     path('program/<int:program_id>/section/<int:section_id>/', SectionViewSet.as_view({'get':'retrieve'}), name = 'section'),
     path('program/<int:program_id>/section/<int:section_id>/activity/<int:activity_id>', ActivityViewSet.as_view({'get':'retrieve'}), name = 'activity'),
 

@@ -10,6 +10,7 @@ from Activity.serializers import ActivitySerializer
 from .models import Section 
 from .serializers import SectionSerializer
 from rest_framework.response import Response
+from rest_framework.exceptions import APIException
 
 class SectionViewSet(mixins.RetrieveModelMixin, GenericViewSet):
 		queryset = Section.objects.all()
@@ -17,8 +18,10 @@ class SectionViewSet(mixins.RetrieveModelMixin, GenericViewSet):
 
 		#retreive method will be called on GET request for section with  arguments
 		def retrieve(self, request, *args, **kwargs):
-			
-			section_details = Section.objects.filter(id = kwargs['section_id'])[0]
-			serializer = SectionSerializer(instance = section_details)
-			return Response(serializer.data)
+			try:
+				section_details = Section.objects.filter(program = kwargs['program_id'], id = kwargs['section_id'])[0]
+				serializer = SectionSerializer(instance = section_details)
+				return Response(serializer.data)
+			except:
+				raise APIException('No section found with program id ' + str(kwargs['program_id']) + ", section id " + str(kwargs['section_id']))
 			
