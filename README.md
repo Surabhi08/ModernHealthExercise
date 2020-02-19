@@ -33,6 +33,7 @@ Follow the following steaps to run the code:
   python manage.py runserver host:port \
   #host and port are optional if you want to run it on particulate host and port or else the program will be 127.0.0.1:8000
   
+  To view all the details in the database navigate to program/ and all the programs with their sections and activity details will be retrieved from the database. \
   To view the details of programs navigate to program/1/ or program/2/ \
   To view the section for a program navigate to program/1/section/1/ \
   To view activity for the section navigate to program/1/section/1/activity/1/ 
