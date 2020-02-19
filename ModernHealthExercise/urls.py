@@ -21,6 +21,7 @@ from Activity.views import ActivityViewSet
 from rest_framework.routers import DefaultRouter
 
 api_router = DefaultRouter()
+api_router.register(r'', ProgramViewSet, 'program')
 api_router.register(r'program', ProgramViewSet, 'program')
 urlpatterns = api_router.urls
 urlpatterns += [

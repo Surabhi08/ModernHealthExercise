@@ -81,9 +81,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'modernhealth',
-        'USER': 'user',
+        'USER': 'maheshwari',
         'PASSWORD': 'password',
-        'HOST': 'host address',
+        'HOST': '172.26.1.233',
         'PORT': '',
     }
 }

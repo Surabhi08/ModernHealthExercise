@@ -11,10 +11,19 @@ from Section.models import Section
 from rest_framework.response import Response
 
 
-class ProgramViewSet(mixins.RetrieveModelMixin,GenericViewSet):
+class ProgramViewSet(mixins.CreateModelMixin,
+                     mixins.ListModelMixin,
+                     mixins.RetrieveModelMixin,
+                     GenericViewSet):
 		queryset = Program.objects.all()
 		serializer_class = ProgramSerializer
-		
+
+		#fetcg all the programs and send it in the responses
+		def list(self, request):
+			queryset = Program.objects.all()
+			serializer = ProgramSerializer(queryset, many = True)
+			return Response(serializer.data)
+
 		#retrieve method will be called when a get request is made with the parameters passed
 		def retrieve(self, request, pk = None):
 			prog = Program.objects.filter(id = pk)[0]

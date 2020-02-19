@@ -13,7 +13,7 @@ class ActivityViewSet(mixins.RetrieveModelMixin, GenericViewSet):
 		queryset = Activity.objects.all()
 		serializer_class = ActivitySerializer
 
-		#retrieve method will be called on a GET request with the arguments
+		#retrieve method will be called on a GET request with the arguments in kwargs
 		def retrieve(self, request, *args, **kwargs):
 			
 			activity_details = Activity.objects.filter(program = kwargs['program_id'], section = kwargs['section_id'], id = kwargs['activity_id'])[0]
